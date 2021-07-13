@@ -395,6 +395,7 @@ ha1 <- HeatmapAnnotation(
   "BL2 TNBCtype Corr." = S2$BL2,
   "M TNBCtype Corr." = S2$M,
   "LAR TNBCtype Corr." = S2$LAR,
+  "K_means group" = S2$Consensus_cluster %>% as.character(),
   "BRCA Subtype PAM50" = S2$BRCA_Subtype_PAM50,
   "Age groups" = S2$agegroups,
   "Lymphnodes positive" = S2$number_of_lymphnodes_positive_by_he,
@@ -409,6 +410,14 @@ ha1 <- HeatmapAnnotation(
       title_gp = gpar(fontsize = 10, fontface = "bold"),
       legend_width  = unit(3, "cm"),
       title = "Lymphnodes positive"
+    ),
+    "K_means group" = list(
+      direction = "horizontal",
+      labels_gp = gpar(fontsize = 10),
+      nrow = 2,
+      title_gp = gpar(fontsize = 10, fontface = "bold"),
+      legend_width  = unit(3, "cm"),
+      title = "K_means group"
     ),
     "BRCA Subtype PAM50" = list(
       direction = "horizontal",
@@ -480,6 +489,14 @@ ha1 <- HeatmapAnnotation(
       "ID" = "#420A68FF",
       "MR" = "#AE305CFF",
       "SR" = "#F8850FFF"
+    ),
+    "K_means group" = c(
+      "1" = "purple",
+      "2" = "darkblue", 
+      "3" = "black",
+      "4" = "gray",
+      "5" = "darkgreen",
+      "6" = "yellow"
     ),
     "LAR TNBCtype Corr." = colorRamp2(c(-0.7, 0, 0.7), c("gray", "white", "green")),
     "M TNBCtype Corr." = colorRamp2(c(-0.7, 0, 0.7), c("gray", "white", "blue")),
@@ -725,7 +742,7 @@ ht_GeneExpr <-  Heatmap(
 # Drawiwng heatmap
 #===============================================================================
 pdf(
-  "plots/TNBC_Figure1C_from_S2.pdf",
+  "plots/TNBC_Figure1B_from_S2.pdf",
   width = 17,
   height = 20
 )
