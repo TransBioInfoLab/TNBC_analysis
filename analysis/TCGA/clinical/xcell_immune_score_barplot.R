@@ -29,8 +29,8 @@ for(p in grep("dir",ls(),value = T)) dir.create(get(p),recursive = TRUE,showWarn
 S2.a <- readxl::read_xlsx(
   path = file.path(dir.data,"Table_S2_TNBCsubtype clinical information and signatures.xlsx"),
   sheet = "A-TCGA_TNBC_subtype"
-) %>% dplyr::filter(subtype != "UNS")  %>% dplyr::select(subtype,ImmuneScore...95) %>%
-  dplyr::mutate(Xcell_immune_score = as.numeric(ImmuneScore...95)) %>% 
+) %>% dplyr::filter(subtype != "UNS")  %>% dplyr::select(subtype,xCell_ImmuneScore) %>%
+  dplyr::mutate(Xcell_immune_score = as.numeric(xCell_ImmuneScore)) %>% 
   dplyr::mutate(dataset = "TCGA")
 
 S2.b <- readxl::read_xlsx(
