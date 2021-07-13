@@ -1,0 +1,126 @@
+﻿gene,pathway
+MLH1,DNA repair
+PMS2,DNA repair
+MSH6,DNA repair
+LIG1,DNA repair
+LIG3,DNA repair
+XRCC1,DNA repair
+CHEK2,DNA repair
+HMCES,DNA repair
+RECQL4,DNA repair
+POLQ,DNA repair
+MKI67,Cell cycle
+TTK,Cell cycle
+TOP2A,Cell cycle
+TOPBP1,Cell cycle
+CDK1,Cell cycle
+KIF11,Cell cycle
+KIF1A,Cell cycle
+KIFC1,Cell cycle
+CENPF,Cell cycle
+BUB1B,Cell cycle
+PLK1,Cell cycle
+AURKB,Cell cycle
+NDC80,Cell cycle
+CCNA2,Cell cycle
+CCNB1,Cell cycle
+CDKN2A,Cell cycle
+RB1,Cell cycle
+MAP2K4,MAPK
+MAP4K5,MAPK
+MAPK11,MAPK
+MAPK15,MAPK
+MAPK7,MAPK
+JUNB,MAPK
+JUN,MAPK
+BMP1,Development
+JAG1,Development
+SRC,Development
+IVL,Development
+CAV1,Development
+MAML2,Development
+NOTCH1,Development
+NOTCH3,Development
+ELF3,TF
+ETV6,TF
+NFIX,TF
+SOX10,TF
+SOX9,TF
+EHF,TF
+MME,TF
+RUNX1,TF
+FGF2,Growth factor
+FGFR2,Growth factor
+IGF1R,Growth factor
+IGFBP3,Growth factor
+IGFBP7,Growth factor
+INSR,Growth factor
+MERTK,Growth factor
+MET,Growth factor
+EGFR,Growth factor
+VEGFA,EMT/wound repair
+ITGA5,EMT/wound repair
+ITGB1,EMT/wound repair
+ITGB3,EMT/wound repair
+NCAM1,EMT/wound repair
+TGFBR1,EMT/wound repair
+TGFB2,EMT/wound repair
+LTBP1,EMT/wound repair
+INHBA,EMT/wound repair
+FAP,EMT/wound repair
+FN1,EMT/wound repair
+LOX,EMT/wound repair
+SPARC,EMT/wound repair
+MMP2,EMT/wound repair
+WNT5A,EMT/wound repair
+ACTA2,EMT/wound repair
+ECM2,EMT/wound repair
+AR,AR signaling
+FOXA1,AR signaling
+SPDEF,AR signaling
+FKBP5,AR signaling
+DHRS2,AR signaling
+ALCAM,AR signaling
+DHCR24,AR signaling
+FASN,AR signaling
+PIP,AR signaling
+HPGD,AR signaling
+SORD,AR signaling
+KRT7,AR signaling
+KRT18,AR signaling
+IDH1,AR signaling
+IDH2,AR signaling
+G6PD,AR signaling
+AKT1,PI3K
+PIK3R1,PI3K
+ERBB2,PI3K
+PRKAA1,PI3K
+PRKAA2,PI3K
+PTPRC,Immune
+CD3E,Immune
+ZAP70,Immune
+CD8A,Immune
+CD4,Immune
+STAT1,Immune
+STAT2,Immune
+STAT4,Immune
+NLRC5,Ag presentation
+HLA-A,Ag presentation
+HLA-B,Ag presentation
+HLA-C,Ag presentation
+B2M,Ag presentation
+TAP1,Ag presentation
+TAP2,Ag presentation
+TAPBP,Ag presentation
+PSMB8,Ag presentation
+PSMB9,Ag presentation
+LAG3,Immune checkpoint
+IDO1,Immune checkpoint
+TIGIT,Immune checkpoint
+HAVCR2,Immune checkpoint
+CD274,Immune checkpoint
+PDCD1LG2,Immune checkpoint
+CTLA4,Immune checkpoint
+C10orf54,Immune checkpoint
+CD276,Immune checkpoint
+VTCN1,Immune checkpoint

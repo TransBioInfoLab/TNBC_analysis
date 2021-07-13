@@ -1,0 +1,43 @@
+Genes,Annotation,Color
+TP53,Cell cycle pathway,#d27400
+MCL1,Cell cycle pathway,#d27400
+MYC,Cell cycle pathway,#d27400
+CCNE1,Cell cycle pathway,#d27400
+CDKN2A,Cell cycle pathway,#d27400
+RB1,Cell cycle pathway,#d27400
+BRCA1,DNA repair pathway,orange
+BRCA2,DNA repair pathway,orange
+ATM,DNA repair pathway,orange
+FANCD2,DNA repair pathway,orange
+PIK3CA,Growth factor/PI3K pathway,pink
+PTEN,Growth factor/PI3K pathway,pink
+ERBB2,Growth factor/PI3K pathway,pink
+EGFR,Growth factor/PI3K pathway,pink
+NF1,Growth factor/PI3K pathway,pink
+NOTCH1,Notch pathway,brown
+NOTCH2,Notch pathway,brown
+NOTCH3,Notch pathway,brown
+FBXW7,Notch pathway,brown
+BRAF,MAPK pathway,black
+HRAS,MAPK pathway,black
+MAP2K1,MAPK pathway,black
+KRAS,MAPK pathway,black
+MAPK9,MAPK pathway,black
+DNMT1,PRC2/BAF pathway,#fcfc5b
+ASH2L,PRC2/BAF pathway,#fcfc5b
+ASXL2,PRC2/BAF pathway,#fcfc5b
+ASXL3,PRC2/BAF pathway,#fcfc5b
+EZH2,PRC2/BAF pathway,#fcfc5b
+ARID1A,PRC2/BAF pathway,#fcfc5b
+ARID1B,PRC2/BAF pathway,#fcfc5b
+KDM6A,PRC2/BAF pathway,#fcfc5b
+BAP1,PRC2/BAF pathway,#fcfc5b
+SMARCA4,PRC2/BAF pathway,#fcfc5b
+SMARCAD1,PRC2/BAF pathway,#fcfc5b
+BCL7C,PRC2/BAF pathway,#fcfc5b
+HCFC1,PRC2/BAF pathway,#fcfc5b
+B2M,Immune,#0AF9F6
+CD274,Immune,#0AF9F6
+PDCD1LG2,Immune,#0AF9F6
+CTLA4,Immune,#0AF9F6
+IDO1,Immune,#0AF9F6
