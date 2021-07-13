@@ -106,9 +106,13 @@ S2 <- readxl::read_xlsx(
   path = file.path(dir.data,"Table_S2_TNBCsubtype clinical information and signatures.xlsx"),
   sheet = "A-TCGA_TNBC_subtype"
 ) 
+S2 <- S2 %>% mutate_at(vars(starts_with("Kaaraayvaz")),funs(as.numeric))
+S2 <- S2 %>% mutate_at(vars(starts_with("Nguyen")),funs(as.numeric))
+S2 <- S2 %>% mutate_at(vars(starts_with("xCell")),funs(as.numeric))
 
 # Load RNA-SEQ 
 load(file.path(dir.data,"TCGA/TCGA_TNBC_192samples_RNASeq.Rdata"))
+
 colnames(dataFilt) <- substr(colnames(dataFilt), 1, 12)
 dataFilt_TNBC <- log2(dataFilt[, S2$patient] + 1)
 
@@ -488,7 +492,6 @@ ha1 <- HeatmapAnnotation(
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 # o Adding immune ESTIMATE 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-
 TCGA_immune_ESTIMATE <- rbind(as.numeric(S2$ESTIMATE_StromalScore),as.numeric(S2$ESTIMATE_ImmuneScore))
 colnames(TCGA_immune_ESTIMATE) <- S2$patient
 rownames(TCGA_immune_ESTIMATE) <- c("ESTIMATE StromalScore","ESTIMATE ImmuneScore")
@@ -518,48 +521,8 @@ ht_estimate <- Heatmap(
 )
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-# o Adding MUSIC Azizi Immune Cells
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-Music_Azizi_tab_sel_Scale <- subset(
-  S2,
-  select = c(
-    "Exhausted T cell, T-regulatory Cell",
-    "Naive T cells",
-    "Monocytic Lineage",
-    "B cells"
-  )
-) %>% t 
-Music_Azizi_tab_sel_Scale <- pheatmap:::scale_rows(x = Music_Azizi_tab_sel_Scale)
-
-orderAzizi <- c(
-  "Monocytic Lineage",
-  "Exhausted T cell, T-regulatory Cell",
-  "T−regulatory Cell"
-)
-orderAzizi <- rownames(Music_Azizi_tab_sel_Scale)
-ht_Azizi <- Heatmap(
-  matrix = Music_Azizi_tab_sel_Scale[orderAzizi, sampleOrderMut],
-  name = "Azizi scRNA",
-  left_annotation = HeatmapAnnotation(
-    "Azizi scRNA" = rep("Azizi scRNA", length(orderAzizi)),
-    which = "row",
-    col = list("Azizi scRNA" = c("Azizi scRNA" = "blue")),
-    show_legend = FALSE,
-    show_annotation_name = FALSE
-  ),
-  col =  colorRamp2(c(-2, 0, 2), c("blue", "white", "red")),
-  use_raster = TRUE,
-  raster_device = c("png"),
-  raster_quality = 2,
-  cluster_columns = FALSE,
-  cluster_rows  = FALSE
-)
-
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 # o Adding MUSIC Karaayvaz Immune Cells
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-
 Karaayvaz_sel <- c(
   "Kaaraayvaz_Epithelial",
   "Kaaraayvaz_Myoepithelial",
