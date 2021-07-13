@@ -102,7 +102,7 @@ colors.pathways <- c(
 # o Data                                                                    |
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 # Load supplemental table 2
-metadata <- readxl::read_xlsx(
+S2 <- readxl::read_xlsx(
   path = file.path(dir.data,"Table_S2_TNBCsubtype clinical information and signatures.xlsx"),
   sheet = "A-TCGA_TNBC_subtype"
 ) 
