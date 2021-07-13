@@ -83,11 +83,12 @@ colors.pathways <- c(
   "chromatin" = "gold",
   "adhesion/motility growth factor" = "red",
   "Growth factor" = "red",
+  "growth factor" = "#34b3b0",
+  "GF" = "red",
   "development" = "grey",
   "Development" = "grey",
   "notch" = "brown",
   "other" = "yellow",
-  "growth factor" = "#34b3b0",
   "MAPK" = "black",
   "DNA repair" = "orange",
   "adhesion/motility" ='blue',
@@ -116,6 +117,22 @@ orderXCell <-
     'Macrophages'
   )
 
+orderHeatmap <- c(
+  "xCell sig.",
+  "Immune",
+  "Ag presentation",
+  "Immune checkpoint",
+  "Cell cycle",
+  "DNA repair",
+  "MAPK",
+  "Development",
+  "EMT/wound repair",
+  "TF",
+  "Growth factor",
+  "AR signaling",
+  "PI3K"
+)
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Data
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,8 +158,8 @@ Metabric.tnbc.meta$ImmuneScore  <- Metabric.tnbc.meta_with_xcell["ImmuneScore",]
 
 # what to plot
 CPTAC_GENES <- read_csv(file.path(dir.data,"CPTAC_GENES_v5.2.csv"))
-CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Immune checkpoint")] <- "Immune\ncheckpoint"
-CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Ag presentation" )] <- "Ag\npresentation" 
+
+
 colnames(CPTAC_GENES)[1] <- "GENE_SYMBOL"
 CPTAC_GENES <- CPTAC_GENES[!duplicated(CPTAC_GENES$GENE_SYMBOL),]
 
@@ -152,6 +169,13 @@ common.genes <- CPTAC_GENES$GENE_SYMBOL %>%
   intersect(rownames(MET500.tnbc.with.xcell)) %>% 
   intersect(rownames(Metabric.tnbc.meta_with_xcell))
 CPTAC_GENES <- CPTAC_GENES %>% dplyr::filter(GENE_SYMBOL %in% common.genes)
+
+CPTAC_GENES <- CPTAC_GENES %>% dplyr::arrange(factor(pathway,levels = orderHeatmap))
+
+CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Immune checkpoint")] <- "Immune\ncheckpoint"
+CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Ag presentation" )] <- "Ag\npresentation" 
+CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Growth factor" )] <- "GF" 
+CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "AR signaling" )] <- "AR" 
 
 
 # Improving data
