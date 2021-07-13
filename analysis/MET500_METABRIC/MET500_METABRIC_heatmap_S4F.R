@@ -101,21 +101,20 @@ colors.pathways <- c(
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # xcell heatmap
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-orderXCell <-
-  c(
-    'CD4+ memory T-cells',
-    'CD4+ naive T-cells',
-    'CD8+ naive T-cells',
-    'CD8+ T-cells',
-    'CD8+ Tcm',
-    'Tregs',
-    'B-cells',
-    'Plasma cells',
-    'Memory B-cells',
-    'Monocytes',
-    'DC',
-    'Macrophages'
-  )
+orderXCell <- c(
+  'CD4+ memory T-cells',
+  'CD4+ naive T-cells',
+  'CD8+ naive T-cells',
+  'CD8+ T-cells',
+  'CD8+ Tcm',
+  'Tregs',
+  'B-cells',
+  'Plasma cells',
+  'Memory B-cells',
+  'Monocytes',
+  'DC',
+  'Macrophages'
+)
 
 orderHeatmap <- c(
   "xCell sig.",
@@ -144,7 +143,7 @@ load( file.path(dir.metabric,"metabric_TNBC.rda"))
 all(colnames(MET500.tnbc) == colnames(MET500.tnbc.xcell))
 all(colnames(MET500.tnbc) == MET500.tnbc.meta$sample_detailed)
 
-MET500.tnbc.with.xcell <- rbind(MET500.tnbc,MET500.tnbc.xcell)
+MET500.tnbc.with.xcell <- rbind(MET500.tnbc.xcell,MET500.tnbc)
 MET500.tnbc.meta$ImmuneScore <- MET500.tnbc.with.xcell["ImmuneScore",] %>% as.numeric()
 
 Metabric.tnbc.meta <- Metabric.tnbc.meta %>% as.data.frame
@@ -153,7 +152,7 @@ all(colnames(Metabric.tnbc) == colnames(Metabric.tnbc.xcell))
 Metabric.tnbc.meta <- Metabric.tnbc.meta[colnames(Metabric.tnbc),,drop = FALSE]
 all(colnames(Metabric.tnbc) == rownames(Metabric.tnbc.meta))
 
-Metabric.tnbc.meta_with_xcell <- rbind(Metabric.tnbc, Metabric.tnbc.xcell)
+Metabric.tnbc.meta_with_xcell <- rbind(Metabric.tnbc.xcell,Metabric.tnbc)
 Metabric.tnbc.meta$ImmuneScore  <- Metabric.tnbc.meta_with_xcell["ImmuneScore",] %>% as.numeric()
 
 # what to plot
@@ -162,15 +161,15 @@ CPTAC_GENES <- read_csv(file.path(dir.data,"CPTAC_GENES_v5.2.csv"))
 
 colnames(CPTAC_GENES)[1] <- "GENE_SYMBOL"
 CPTAC_GENES <- CPTAC_GENES[!duplicated(CPTAC_GENES$GENE_SYMBOL),]
+CPTAC_GENES <- rbind(data.frame(GENE_SYMBOL = orderXCell,pathway = "xCell sig."),CPTAC_GENES)
+CPTAC_GENES <- CPTAC_GENES %>% dplyr::arrange(factor(pathway,levels = orderHeatmap))
 
-CPTAC_GENES <- rbind(CPTAC_GENES,data.frame(GENE_SYMBOL = orderXCell,pathway = "xCell sig."))
 
 common.genes <- CPTAC_GENES$GENE_SYMBOL %>% 
   intersect(rownames(MET500.tnbc.with.xcell)) %>% 
   intersect(rownames(Metabric.tnbc.meta_with_xcell))
 CPTAC_GENES <- CPTAC_GENES %>% dplyr::filter(GENE_SYMBOL %in% common.genes)
 
-CPTAC_GENES <- CPTAC_GENES %>% dplyr::arrange(factor(pathway,levels = orderHeatmap))
 
 CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Immune checkpoint")] <- "Immune\ncheckpoint"
 CPTAC_GENES$pathway[which(CPTAC_GENES$pathway == "Ag presentation" )] <- "Ag\npresentation" 
