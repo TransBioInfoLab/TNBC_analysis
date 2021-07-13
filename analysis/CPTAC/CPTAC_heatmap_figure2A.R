@@ -149,9 +149,6 @@ rna <- rna[match(CPTAC_GENES$GENE_SYMBOL,rownames(rna)),]
 phospo <- phospo[rownames(phospo) %in% CPTAC_GENES$GENE_SYMBOL,]
 phospo <- phospo[match(CPTAC_GENES$GENE_SYMBOL,rownames(phospo)),]
 
-all(rownames(phospo) == rownames(rna))
-all(rownames(phospo) == rownames(protein))
-
 # data with no NA
 common.genes <- CPTAC_GENES$GENE_SYMBOL %>% 
   intersect(rownames(protein)) %>%
@@ -347,7 +344,7 @@ ht.rna <- Heatmap(
 )
 
 pdf(
-  file.path(dir.plots,"CPTAC_TNBC_GENES_prospective.pdf"),
+  file.path(dir.plots,"CPTAC_TNBC_GENES_prospective_2A.pdf"),
   width = 8, 
   height = 7
 )
