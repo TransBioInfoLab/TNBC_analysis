@@ -90,7 +90,7 @@ ggsave(
   plot = p,
   filename = file.path(
     dir.plots,
-    "Boxplots_immune_score_xcell_by_TNBC_subtype_cohorts.pdf"
+    "Boxplots_immune_score_xcell_by_TNBC_subtype_cohorts_S4E.pdf"
   ),
   height = 8,
   width = 7
