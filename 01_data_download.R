@@ -473,9 +473,6 @@ save(
 # Controlled data access - data not included in the code/Github 
 # https://www.synapse.org/#!Synapse:syn1757063
 # Save file in data/metabric folder
-file <- file.path(dir.metabric,"Complete_normalized_expression_data_METABRIC.txt")
-file <- "~/TBL Dropbox/Tiago Silva/TNBC/metabric/data/Complete_normalized_expression_data_METABRIC.txt"
-
 options(timeout = 1000) 
 downloader::download(
   "https://cbioportal-datahub.s3.amazonaws.com/brca_metabric.tar.gz",
