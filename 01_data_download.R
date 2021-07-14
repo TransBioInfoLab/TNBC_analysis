@@ -595,7 +595,7 @@ head(samples.ids)
 colnames(atac.seq.brca)[-c(1:5)] <- samples.ids$Case_ID[match(gsub("_","-",colnames(atac.seq.brca)[-c(1:5)]),samples.ids$bam_prefix)]
 atac.seq.brca[1:4,1:8]
 
-idx.tnbc <- which(substr(colnames(atac.seq.brca)[-c(1:5)],1,12) %in% S2$barcode) + 5
+idx.tnbc <- which(substr(colnames(atac.seq.brca)[-c(1:5)],1,12) %in% S2$patient) + 5
 atac.seq.tnbc <- atac.seq.brca[,c(1:5,idx.tnbc)]
 
 #-------------------------------

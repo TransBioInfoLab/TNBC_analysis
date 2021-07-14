@@ -1,0 +1,100 @@
+﻿gene,pathway
+MKI67,Cell cycle
+TOP2A,Cell cycle
+TOPBP1,Cell cycle
+KIF11,Cell cycle
+KIF1A,Cell cycle
+CENPF,Cell cycle
+AURKA,Cell cycle
+AURKB,Cell cycle
+PLK1,Cell cycle
+POLE,Cell cycle
+POLK,Cell cycle
+CDKN2A,Cell cycle
+CCNB1,Cell cycle
+CDK1,Cell cycle
+CCND2,Cell cycle
+CDK6,Cell cycle
+RB1,Cell cycle
+ATM,DNA repair
+ATR,DNA repair
+ATRIP,DNA repair
+H2AFX,DNA repair
+CHEK1,DNA repair
+CHEK2,DNA repair
+TP53,DNA repair
+EGFR,MAPK
+SCH1,MAPK
+SOS2,MAPK
+KRAS,MAPK
+RAF1,MAPK
+MAP2K2,MAPK
+MAPK1,MAPK
+MAPK2,MAPK
+MAPK11,MAPK
+MAPK7,MAPK
+JUNB,MAPK
+JUN,MAPK
+AR,AR signaling
+FOXA1,AR signaling
+SPDEF,AR signaling
+DHRS2,AR signaling
+ALCAM,AR signaling
+DHCR24,AR signaling
+FASN,AR signaling
+ERBB2,PI3K
+AKT1,PI3K
+AKT2,PI3K
+PIK3R1,PI3K
+PDK1,PI3K
+GSK3B,PI3K
+AKT1S1,PI3K
+FOXO3,PI3K
+EIF4B,PI3K
+TSC2,PI3K
+MTOR,PI3K
+EIF4EBP1,PI3K
+EIF4B,PI3K
+RPS6KB1,PI3K
+RPS6,PI3K
+BMP1,Development
+NOTCH1,Development
+NOTCH2,Development
+NOTCH3,Development
+TGFBR1,Development
+TGFB2,Development
+FGF1,Growth factor
+FGF2,Growth factor
+FGFR2,Growth factor
+CTGF,Growth factor
+IGF1R,Growth factor
+HES1,TF
+ELF3,TF
+TCF7L2,TF
+SOX10,TF
+PTPRC,Immune
+CD3E,Immune
+ZAP70,Immune
+CD8A,Immune
+CD4,Immune
+STAT1,Immune
+STAT2,Immune
+STAT3,Immune
+STAT4,Immune
+STAT5A,Immune
+HLA-A,Ag presentation
+HLA-B,Ag presentation
+HLA-C,Ag presentation
+B2M,Ag presentation
+TAP1,Ag presentation
+TAP2,Ag presentation
+TAPBP,Ag presentation
+PSMB8,Ag presentation
+PSMB9,Ag presentation
+CD274,Immune checkpoint
+PDCD1LG2,Immune checkpoint
+IDO1,Immune checkpoint
+HAVCR2,Immune checkpoint
+C10orf54,Immune checkpoint
+CD276,Immune checkpoint
+VTCN1,Immune checkpoint
