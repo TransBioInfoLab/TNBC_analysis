@@ -57,7 +57,7 @@ for(p in grep("dir",ls(),value = T)) dir.create(get(p),recursive = TRUE,showWarn
 S2 <- readxl::read_xlsx(
   path = file.path(dir.data,"Table_S2_TNBCsubtype clinical information and signatures.xlsx"),
   sheet = "A-TCGA_TNBC_subtype"
-) %>% dplyr::filter(subtype != "UNS") 
+)  
 
 tnbc.patient <- S2$patient
 
