@@ -114,7 +114,7 @@ S2 <- S2 %>% mutate_at(vars(starts_with("xCell")),funs(as.numeric))
 load(file.path(dir.data,"TCGA/TCGA_TNBC_192samples_RNASeq.Rdata"))
 
 colnames(dataFilt) <- substr(colnames(dataFilt), 1, 12)
-dataFilt_TNBC <- log2(dataFilt[, S2$patient] + 1)
+dataFilt_TNBC <- log2(dataFilt[,S2$patient] + 1)
 
 # Gene list for CNA/mutation
 gene.cna.mut <- read_csv(file = "data/gene_list_cna_mutation_fig1B.csv") %>% as.data.frame %>% 

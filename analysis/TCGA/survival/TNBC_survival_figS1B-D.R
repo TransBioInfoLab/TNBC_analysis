@@ -34,8 +34,8 @@ S2.a <- readxl::read_xlsx(
   path = file.path(dir.data,"Table_S2_TNBCsubtype clinical information and signatures.xlsx"),
   sheet = "A-TCGA_TNBC_subtype"
 ) %>% dplyr::filter(subtype != "UNS" & Stage != "NA")  %>% 
-  dplyr::select(patient, subtype,  OS.time, DSS.time, PFI.time, PFI, OS, DSS, Stage, TIME_CLASS, ImmuneScore...95, Age) %>%
-  dplyr::mutate(Xcell_immune_score = as.numeric(ImmuneScore...95), DSS = as.numeric(DSS)) %>% 
+  dplyr::select(patient, subtype,  OS.time, DSS.time, PFI.time, PFI, OS, DSS, Stage, TIME_CLASS, xCell_ImmuneScore, Age) %>%
+  dplyr::mutate(Xcell_immune_score = as.numeric(xCell_ImmuneScore), DSS = as.numeric(DSS)) %>% 
   dplyr::mutate(dataset = "TCGA")
 
 S2.a$Stage <- S2.a$Stage %>% {gsub("Stage_","",.)} %>% as.roman %>% as.numeric
