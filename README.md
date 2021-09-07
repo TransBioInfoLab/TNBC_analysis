@@ -55,7 +55,7 @@ list.of.packages <- c(
   "tidyr",
   "GenomicRanges",
   "SummarizedExperiment",
-  "myGene",
+  "mygene",
   "illuminaHumanv4.db",
   "EnsDb.Hsapiens.v75",
   "FDb.InfiniumMethylation.hg19",
