@@ -1,3 +1,4 @@
+
 # Introduction 
 
 Repository with supplementary code for article:
@@ -9,6 +10,11 @@ Repository with supplementary code for article:
  - Brian D. Lehmann 
  - Tiago C. Silva
  - Xi S.Chen
+
+## How to cite this code:
+
+[![DOI](https://zenodo.org/badge/347098639.svg)](https://zenodo.org/badge/latestdoi/347098639)
+
 
 ## Folder and files structure
 
