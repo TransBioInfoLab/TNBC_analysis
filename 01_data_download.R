@@ -10,8 +10,8 @@
 # Authors: 
 # - Antonio Colaprico
 # - Brian D. Lehmann 
-# - Tiago C. silva
 # - Hanchen huang
+# - Tiago C. silva
 # - Xi S.Chen
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=
 # Date: 28 October 2020
@@ -159,7 +159,11 @@ query.met <- GDCquery(
 
 GDCdownload(query.met, directory = dir.tcga)
 
-BRCA.met <- GDCprepare(query.met, directory = dir.tcga)
+# Note: from the 192 TNBC samples we only have 140 samples with DNA methylation
+BRCA.met <- GDCprepare(
+  query = query.met, 
+  directory = dir.tcga
+)
 
 save(
   BRCA.met, 
@@ -658,4 +662,3 @@ rse.merged <- SummarizedExperiment(
 )
 save(rse.merged,file = file.path(dir.atac_seq,"TNBC_ATAC_seq_merged.rda"), compress = "xz")
 #============================================================
-
