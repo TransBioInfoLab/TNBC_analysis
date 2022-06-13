@@ -11,6 +11,7 @@
 # - Antonio Colaprico
 # - Brian D. Lehmann 
 # - Tiago C. silva
+# - Hanchen huang
 # - Xi S.Chen
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=
 # Date: 28 October 2020
@@ -70,7 +71,7 @@ tnbc.patient <- S2$patient
 query.clin <- GDCquery(
   project = "TCGA-BRCA", 
   data.category = "Clinical", 
-  file.type = "xml",
+  data.format = "BCR XML",
   barcode = tnbc.patient
 )
 
