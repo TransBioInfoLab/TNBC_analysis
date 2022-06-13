@@ -8,6 +8,7 @@ Repository with supplementary code for article:
 ## Authors
  - Antonio Colaprico
  - Brian D. Lehmann 
+ - Hanchen huang
  - Tiago C. Silva
  - Xi S.Chen
 
