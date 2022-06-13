@@ -31,7 +31,7 @@ Genomics of Drug Sensitivity in Cancer) analysis
 
 # Instructions
 
-- To run the analysis you will need a machine with R 4.0 and at least 32Gb. 
+- To run the analysis you will need a machine with R 4.2 and at least 32Gb. 
 
 - We expect the working directory to be the upper level where you can see folder 
 `analysis` and `data`. 
@@ -51,7 +51,7 @@ For any reason, if you are not able to run the code, please, create an issue in 
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
-BiocManager::install(version = "3.13",ask = FALSE) # Install last version of Bioconductor
+BiocManager::install(version = "3.15",ask = FALSE) # Install last version of Bioconductor
 
 list.of.packages <- c(
   "readr",
